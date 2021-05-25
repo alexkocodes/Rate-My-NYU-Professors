@@ -1,6 +1,6 @@
  # Rate-My-NYU-Professor  &nbsp;  <img src="https://github.com/fyk211/Rate-My-NYU-Professor/blob/main/images/nyu_logo-48.png?raw=true" height=40px>  
 
-## This is a google extension that displays the ratings of each professor from your classes on Albert! 
+## This is a Chrome extension that displays the ratings of each NYU professor for each course on Albert. 
 
 I am waiting for google to approve my extension. Once it is approved, it will be published on the Chrome Web Store. In the meantime, please feel free to download the source code and load the package on your own. It works the same way! I am also working on improving this extension and giving it more functionalities, so stay tuned for updates! 
 
