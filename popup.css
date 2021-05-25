@@ -1,0 +1,49 @@
+body{
+  width: 80px;
+  height: 120px;
+  background-image: url("images/popup_background.jpg");
+  border-radius: 25px;
+}
+span{
+  font-family: Sans-serif;
+  font-style: italic;
+  font-size: 15px;
+  text-align: center;
+  color: white;
+}
+#button{
+  font-family: Sans-serif;
+  text-decoration: underline;
+  margin-top: 10px;
+  background-color: #E5CCFF;
+  border-radius: 5px;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+#button span {
+
+  font-size: 12px;
+  color: black;
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+#button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 15px;
+  right: -20px;
+  transition: 0.5s;
+}
+
+#button:hover span {
+  padding-right: 25px;
+}
+
+#button:hover span:after {
+  opacity: 1;
+  right: 0;
+}

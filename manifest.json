@@ -1,0 +1,28 @@
+{
+	"name" : "Rate My NYU Professors",
+	"version" : "1",
+  "description": "Display the ratings of each professor from your classes!",
+	"permissions": ["storage", "tabs", "scripting", "activeTab"],
+	"host_permissions": [
+		 "https://search-production.ratemyprofessors.com/*"
+	 ],
+	"content_scripts": [ {
+		"js": [ "jquery-3.3.1.min.js", "contentscript.js"],
+		"matches": [ "https://sis.portal.nyu.edu/*", "https://sis.portal.nyu.edu/"]
+		
+	  }],
+
+	"background": {
+		"service_worker": "background.js"
+	 },
+	"icons": {
+		"16": "images/nyu_logo-16.png",
+		"36": "images/nyu_logo-36.png",
+		"48": "images/nyu_logo-48.png",
+		"128": "images/nyu_logo-128.png"
+	 },
+	"action": {
+    "default_popup": "popup.html"
+  },
+	"manifest_version" : 3
+}
