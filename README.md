@@ -20,3 +20,6 @@ I am waiting for google to approve my extension. Once it is approved, it will be
 5. Click on the rating to go to their rate my professor page. 
 6. Enjoy selecting all your courses! 
 
+<p align="center">
+  <img src="https://github.com/fyk211/Rate-My-NYU-Professor/blob/main/images_for_github/example.png?raw=true">
+</p>
