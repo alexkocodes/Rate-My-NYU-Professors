@@ -15,7 +15,7 @@ I am waiting for google to approve my extension. Once it is approved, it will be
 ## How this extension works: 
 1. Go to any of your albert classes page (see below for example).
 2. Click on the extension on your toolbar. 
-3. Click __Click to Show Ratings__.
+3. Click __Click to Show Ratings__ button.
 4. If there is any rating found for that professor, the number will show up next to their name. 
 5. Click on the rating to go to their rate my professor page. 
 6. Enjoy selecting all your courses! 
