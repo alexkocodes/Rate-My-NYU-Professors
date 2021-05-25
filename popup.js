@@ -13,5 +13,5 @@ document.getElementById("button").addEventListener("click", async () => {
 function sendClicked(){
   var evt = new CustomEvent("clicked");
   window.dispatchEvent(evt);
-  console.log("clicked");
+  
 }
