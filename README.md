@@ -7,7 +7,7 @@ I am waiting for google to approve my extension. Once it is approved, it will be
 
 ## Here are the instructions for loading this extension locally: 
 1. Download the source code and unzip the file. 
-2. Go to chrome://extensions/ on your chrome browser. 
+2. Go to chrome://extensions/ on your chrome browser. Turn on the Developer Mode if you have not already.
 3. Click __Load unpacked__ on your top left corner and select the folder that you just unzipped. 
 4. Make sure to toggle on this extension and pin it to your toolbar! 
 5. Done!
