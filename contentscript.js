@@ -11,7 +11,7 @@ window.addEventListener("clicked", function(evt) {
     if(iframe && iframe.id == "lbFrameContent" ){
       var innerDoc = (iframe.contentDocument) ? iframe.contentDocument : iframe.contentWindow.document;
       allTexts = innerDoc.querySelectorAll("td");
-      console.log(allTexts);
+      
       if(allTexts[0] != undefined && allTexts[0].offsetWidth == "697"){
         var myurl = "https://search-production.ratemyprofessors.com/solr/rmp/select/?solrformat=true&rows=2&wt=json&q=";
         for(let i=0; i< allTexts.length; i++){
