@@ -1,4 +1,4 @@
- # Rate-My-NYU-Professor  &nbsp;  <img src="https://github.com/fyk211/Rate-My-NYU-Professor/blob/main/images/nyu_logo-48.png?raw=true" height=40px>  
+ # Rate-My-NYU-Professor  &nbsp;  <img src="https://github.com/fyk211/Rate-My-NYU-Professor/blob/main/images/nyu_logo-48.png?raw=true" height=30px>  
 
 ## This is a Chrome extension that displays the ratings of each NYU professor for each course on Albert. 
 
