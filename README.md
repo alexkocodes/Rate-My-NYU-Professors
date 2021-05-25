@@ -1,4 +1,4 @@
-# Rate-My-NYU-Professor
+# Rate-My-NYU-Professor  <img src="https://github.com/fyk211/Rate-My-NYU-Professor/blob/main/images/nyu_logo-48.png?raw=true">
 
 ## This is a google extension that display the ratings of each professor from your classes on Albert! 
 
