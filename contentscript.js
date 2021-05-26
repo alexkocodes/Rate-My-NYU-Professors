@@ -40,7 +40,7 @@ window.addEventListener("clicked", function(evt) {
                           var newDiv = document.createElement("div");
                           newDiv.style.display = "inline";
                           newDiv.innerHTML = link;
-                          console.log(allTexts[i].firstElementChild.nextElementSibling.nextElementSibling.nextElementSibling);
+                          
                           if(newDiv.innerHTML != allTexts[i].firstElementChild.nextElementSibling.nextElementSibling.nextElementSibling.innerHTML){ //check if the div has already been added to the document
                             //insert the div after the professor's name
                             allTexts[i].firstElementChild.nextElementSibling.nextElementSibling.nextSibling.parentNode.insertBefore(newDiv, allTexts[i].firstElementChild.nextElementSibling.nextElementSibling.nextSibling.nextSibling);
