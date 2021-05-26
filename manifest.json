@@ -2,7 +2,7 @@
 	"name" : "Rate My NYU Professors",
 	"version" : "1.0",
   "description": "Display the ratings of each professor from your classes!",
-	"permissions": ["storage", "tabs", "scripting", "activeTab"],
+	"permissions": ["scripting", "activeTab"],
 	"host_permissions": [
 		 "https://search-production.ratemyprofessors.com/*"
 	 ],
