@@ -53,7 +53,7 @@ function getNames(){
                         }
                   }
                   else{
-                    var profURL = "https://www.ratemyprofessors.com/";
+                    var profURL = "https://www.ratemyprofessors.com/AddTeacher.jsp";
                     var link = " <a style='color: green; font-weight: bold' href=\"" + profURL + "\" target=\"_blank\">(N/A)</a>";
                     var newDiv = document.createElement("div");
                     newDiv.style.display = "inline";
@@ -99,7 +99,7 @@ function getNames(){
                         }
                   }
                   else{
-                    var profURL = "https://www.ratemyprofessors.com/";
+                    var profURL = "https://www.ratemyprofessors.com/AddTeacher.jsp";
                     var link = " <a style='color: green; font-weight: bold' href=\"" + profURL + "\" target=\"_blank\">(N/A)</a>";
                     var newDiv = document.createElement("div");
                     newDiv.style.display = "inline";
