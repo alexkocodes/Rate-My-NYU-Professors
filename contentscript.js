@@ -11,7 +11,7 @@ window.addEventListener("clicked", function(evt) {
     if(iframe && iframe.id == "lbFrameContent" ){
       var innerDoc = (iframe.contentDocument) ? iframe.contentDocument : iframe.contentWindow.document;
       allTexts = innerDoc.querySelectorAll("td");
-      
+
       if(allTexts[0] != undefined && allTexts[0].offsetWidth == "697"){
         var myurl = "https://search-production.ratemyprofessors.com/solr/rmp/select/?solrformat=true&rows=2&wt=json&q=";
         for(let i=0; i< allTexts.length; i++){
@@ -40,9 +40,11 @@ window.addEventListener("clicked", function(evt) {
                           var newDiv = document.createElement("div");
                           newDiv.style.display = "inline";
                           newDiv.innerHTML = link;
-
-                          //insert the div after the professor's name
-                          allTexts[i].firstElementChild.nextElementSibling.nextElementSibling.nextSibling.parentNode.insertBefore(newDiv, allTexts[i].firstElementChild.nextElementSibling.nextElementSibling.nextSibling.nextSibling);
+                          console.log(allTexts[i].firstElementChild.nextElementSibling.nextElementSibling.nextElementSibling);
+                          if(newDiv.innerHTML != allTexts[i].firstElementChild.nextElementSibling.nextElementSibling.nextElementSibling.innerHTML){ //check if the div has already been added to the document
+                            //insert the div after the professor's name
+                            allTexts[i].firstElementChild.nextElementSibling.nextElementSibling.nextSibling.parentNode.insertBefore(newDiv, allTexts[i].firstElementChild.nextElementSibling.nextElementSibling.nextSibling.nextSibling);
+                          }
 
 
 
