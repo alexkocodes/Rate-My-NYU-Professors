@@ -2,7 +2,7 @@
 
 ## A Chrome extension that displays the ratings of each NYU professor for each course on Albert. 
 
-I am waiting for google to approve my extension. Once it is approved, it will be published on the Chrome Web Store. In the meantime, please feel free to download the source code and load the package on your own. It works the same way! I am also working on improving this extension and giving it more functionalities, so stay tuned for updates! 
+Here is the [listing](https://chrome.google.com/webstore/detail/rate-my-nyu-professors/mhgjkecddklmbnllifdpkhcnhfpkjfji?hl=en&authuser=2) on the Chrome Web Store. If you find my extension useful, it would be greatly appreciated if you can leave a review! ;)
 
 
 ## Here are the instructions for loading this extension locally: 
