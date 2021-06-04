@@ -1,6 +1,6 @@
 {
 	"name" : "Rate My NYU Professors",
-	"version" : "1.1",
+	"version" : "1.2",
   "description": "Display the ratings of each professor for your classes on Albert!",
 	"permissions": ["scripting", "activeTab"],
 	"host_permissions": [

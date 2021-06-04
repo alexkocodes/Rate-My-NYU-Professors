@@ -65,7 +65,7 @@ function getNames(){
               });
 
             }
-            if(text.length > 15){ // if there are more than 1 professor, add the first professor first
+            if(text.length > 15){ // if there are more than 1 professor, add the first professor
               var firstName = text[text.length-3].replace(/[,;]/g, "").toLowerCase();
               var lastName = text[text.length-4].replace(/[,;]/g, "").toLowerCase();
               myurl1 = myurl + firstName + "+" + lastName + "+AND+schoolid_s%3A675";
@@ -89,10 +89,10 @@ function getNames(){
                           newDiv.style.display = "inline";
                           newDiv.innerHTML = link;
 
-                          //if(newDiv.innerHTML != allTexts[i].firstElementChild.nextElementSibling.nextElementSibling.nextElementSibling.innerHTML){ //check if the div has already been added to the document
-                            //insert the div after the professor's name
-                            allTexts[i].firstElementChild.nextElementSibling.nextElementSibling.nextSibling.parentNode.insertBefore(newDiv, allTexts[i].firstElementChild.nextElementSibling.nextElementSibling.nextSibling.nextSibling);
-                          //}
+
+                          //insert the div after the professor's name
+                          allTexts[i].firstElementChild.nextElementSibling.nextElementSibling.nextSibling.parentNode.insertBefore(newDiv, allTexts[i].firstElementChild.nextElementSibling.nextElementSibling.nextSibling.nextElementSibling);
+
 
 
 
