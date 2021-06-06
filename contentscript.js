@@ -45,7 +45,7 @@ function getNames(){
 
 function getRatings(myurl1, currentText){
 
-  var schools = ["675", "772", "4119", "5165"]; // nyu, tandom, steinhardt, dentistry school IDs
+  var schools = ["675", "772", "4119", "5165"]; // nyu, tandon, steinhardt, dentistry school IDs
   // get professor's rating
   chrome.runtime.sendMessage({ url: myurl1, type: "profRating" }, function (response) {
 
