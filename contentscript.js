@@ -10,9 +10,23 @@ function getNames(){
 
 
   var iframe = document.querySelectorAll("iframe")[2];
+
+  var cssLink1 = document.createElement("link");
+  cssLink1.rel = "stylesheet";
+  cssLink1.href = chrome.runtime.getURL('tooltip.css');
+  cssLink1.type = "text/css";
+  iframe.contentDocument.head.appendChild(cssLink1);
+
+  var cssLink2 = document.createElement("link");
+  cssLink2.rel = "stylesheet";
+  cssLink2.href = chrome.runtime.getURL('tooltipster/dist/css/tooltipster.main.min.css');
+  cssLink2.type = "text/css";
+  iframe.contentDocument.head.appendChild(cssLink2);
+
   if(iframe && iframe.id == "lbFrameContent" ){
     var innerDoc = (iframe.contentDocument) ? iframe.contentDocument : iframe.contentWindow.document;
     allTexts = innerDoc.querySelectorAll("td");
+    //allTitles = innerDoc.querySelectorAll(".ps-htmlarea span");
 
     if(allTexts[0] != previous_page[0]){ // check if this page has been scanned already to avoid adding ratings more than once
 
@@ -70,6 +84,14 @@ function getRatings(myurl1, currentText){
                   var newDiv = document.createElement("div");
                   newDiv.style.display = "inline";
                   newDiv.innerHTML = link;
+                  newDiv.classList.add("tooltip");
+
+                  var allprofRatingsURL = "https://www.ratemyprofessors.com/paginate/professors/ratings?tid=" + profID + "&page=0&max=20";
+
+                  var className = currentText.firstElementChild.firstElementChild.textContent.replace(/[- ]/g, "");
+
+                  AddTooltip(newDiv, allprofRatingsURL, realFirstName, realLastName, className);
+
 
                   //insert the div after the professor's name
                   currentText.firstElementChild.nextElementSibling.nextElementSibling.nextSibling.parentNode.insertBefore(newDiv, currentText.firstElementChild.nextElementSibling.nextElementSibling.nextSibling.nextSibling);
@@ -101,4 +123,69 @@ function addNA(currentText){  // function that adds N/A
   newDiv.innerHTML = link;
   //insert the div after the professor's name
   currentText.firstElementChild.nextElementSibling.nextElementSibling.nextSibling.parentNode.insertBefore(newDiv, currentText.firstElementChild.nextElementSibling.nextElementSibling.nextSibling.nextSibling);
+}
+
+
+function AddTooltip(newDiv, myurl1, realFirstName, realLastName, className) {
+    chrome.runtime.sendMessage({ url: myurl1, type: "tooltip" }, function (response) {
+        var resp = response.JSONresponse;
+        //Build content for professor tooltip
+        var easyRating = 0;
+        var wouldTakeAgain = 0;
+        var wouldTakeAgainNACount = 0;
+        var foundFirstReview = false;
+        var firstReview = "";
+        for (var i = 0; i < resp.ratings.length; i++) {
+            easyRating += resp.ratings[i].rEasy;
+            if (resp.ratings[i].rWouldTakeAgain === "Yes") {
+                wouldTakeAgain++;
+            } else if (resp.ratings[i].rWouldTakeAgain === "N/A") {
+                wouldTakeAgainNACount++;
+            }
+
+            if (resp.ratings[i].rClass === className && !foundFirstReview) {
+                firstReview = resp.ratings[i].rComments;
+                foundFirstReview = true;
+            }
+
+        }
+        if (!foundFirstReview && resp.ratings[0]) {
+            firstReview = "Not found...but check out this most recent review: " + resp.ratings[0].rComments;
+        }
+
+        else if(!resp.ratings[0]){
+            firstReview = "N/A";
+        }
+
+        easyRating /= resp.ratings.length;
+        if (resp.ratings.length >= 8 && wouldTakeAgainNACount < (resp.ratings.length / 2)) {
+            wouldTakeAgain = ((wouldTakeAgain / (resp.ratings.length - wouldTakeAgainNACount)) * 100).toFixed(0).toString() + "%";
+        } else {
+            wouldTakeAgain = "N/A";
+        }
+        var div = document.createElement("div");
+        var title = document.createElement("h3");
+        title.textContent = "Rate My Professor Details";
+        var professorText = document.createElement("p");
+        professorText.textContent = "Professor Name: " + realFirstName + " " + realLastName;
+        var easyRatingText = document.createElement("p");
+        easyRatingText.textContent = "Level of Difficulty" + ": " + easyRating.toFixed(1).toString() + "/5.0";
+        var wouldTakeAgainText = document.createElement("p");
+        wouldTakeAgainText.textContent = "Would take again: " + wouldTakeAgain;
+        var classText = document.createElement("span");
+        classText.textContent = "Most recent review for " + className + ": ";
+        var commentText = document.createElement("span");
+        commentText.textContent = firstReview;
+        commentText.classList.add("review");
+        div.appendChild(title);
+        div.appendChild(professorText);
+        div.appendChild(easyRatingText);
+        div.appendChild(wouldTakeAgainText);
+        div.appendChild(classText);
+        div.appendChild(commentText);
+
+        div.classList.add("tooltiptext");
+        newDiv.classList.add("tooltip");
+        newDiv.appendChild(div);
+    });
 }

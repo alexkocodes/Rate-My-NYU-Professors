@@ -1,0 +1,60 @@
+@font-face{
+  font-family: myFont1;
+  src: url("../fonts/Lato-SemiboldItalic.ttf");
+}
+@font-face{
+  font-family: myFont2;
+  src: url("../fonts/Lato-Regular.ttf");
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+	font-family: myFont2;
+  visibility: hidden;
+  width: 400px;
+	background-color: red; /* For browsers that do not support gradients */
+  background-image: linear-gradient(150deg, #57058b, #7c395c);
+  color: #fff;
+  text-align: left;
+	font-size: 15px;
+  border-radius: 6px;
+  padding: 5px;
+	padding-left: 10px;
+	padding-bottom: 10px;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+  bottom: 120%;
+  left: 50%;
+  margin-left: -200px;
+
+	/* Fade in tooltip - takes 0.6 second to go from 0% to 100% opac: */
+  opacity: 0;
+  transition: opacity 0.6s;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -13px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #742d67 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+	opacity: 1;
+}
+
+.review {
+	display: inline;
+	font-family: myFont1;
+}
