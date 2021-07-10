@@ -21,5 +21,5 @@ Here is the [listing](https://chrome.google.com/webstore/detail/rate-my-nyu-prof
 6. Enjoy selecting all your courses! 
 
 <p align="center">
-  <img src="https://github.com/fyk211/Rate-My-NYU-Professors/blob/main/images_for_github/example1.png?raw=true" height=800px>
+  <img src="https://github.com/fyk211/Rate-My-NYU-Professors/blob/main/images_for_github/example1.png?raw=true" height=400px width=640px>
 </p>
