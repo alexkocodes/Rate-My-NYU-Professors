@@ -18,7 +18,8 @@ Here is the [listing](https://chrome.google.com/webstore/detail/rate-my-nyu-prof
 3. Click __Click to Show Ratings__ button.
 4. If there is any rating found for that professor, the number will show up next to their name. If no ratings found, it will show N/A. 
 5. Click on the rating to go to their rate my professor page. Click on N/A to give them the first rating!
-6. Enjoy selecting all your courses! 
+6. Hover over their rating to see more details.
+7. Enjoy selecting all your courses! 
 
 <p align="center">
   <img src="https://github.com/fyk211/Rate-My-NYU-Professors/blob/main/images_for_github/example1.png?raw=true" height=400px width=640px>
