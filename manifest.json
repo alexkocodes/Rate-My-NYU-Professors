@@ -7,7 +7,7 @@
 		 "https://search-production.ratemyprofessors.com/*"
 	 ],
 	"content_scripts": [ {
-		"js": [ "jquery-3.6.0.min.js", "contentscript.js", "tooltipster/dist/js/tooltipster.bundle.min.js"],
+		"js": [ "contentscript.js"],
 		"matches": [ "https://sis.portal.nyu.edu/*", "https://sis.portal.nyu.edu/"]
 	  }],
 
@@ -25,7 +25,7 @@
   },
 	"web_accessible_resources": [
 		{
-		 "resources": [ "tooltip.css", "tooltipster/dist/css/tooltipster.main.min.css", "fonts/Lato-SemiboldItalic.ttf", "fonts/Lato-Regular.ttf"],
+		 "resources": [ "tooltip.css", "fonts/Lato-SemiboldItalic.ttf", "fonts/Lato-Regular.ttf"],
 		 "matches": [ "https://sis.nyu.edu/*" ]
 	 }],
 	"manifest_version" : 3

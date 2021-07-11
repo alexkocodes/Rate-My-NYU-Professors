@@ -17,12 +17,6 @@ function getNames(){
   cssLink1.type = "text/css";
   iframe.contentDocument.head.appendChild(cssLink1);
 
-  var cssLink2 = document.createElement("link");
-  cssLink2.rel = "stylesheet";
-  cssLink2.href = chrome.runtime.getURL('tooltipster/dist/css/tooltipster.main.min.css');
-  cssLink2.type = "text/css";
-  iframe.contentDocument.head.appendChild(cssLink2);
-
   if(iframe && iframe.id == "lbFrameContent" ){
     var innerDoc = (iframe.contentDocument) ? iframe.contentDocument : iframe.contentWindow.document;
     allTexts = innerDoc.querySelectorAll("td");
