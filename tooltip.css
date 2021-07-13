@@ -31,7 +31,7 @@
   z-index: 1;
   bottom: 120%;
   left: 50%;
-  margin-left: -200px;
+  margin-left: -198px;
 
 	/* Fade in tooltip - takes 0.6 second to go from 0% to 100% opac: */
   opacity: 0;

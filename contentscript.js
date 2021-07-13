@@ -82,7 +82,12 @@ function getRatings(myurl1, currentText){
 
                   var allprofRatingsURL = "https://www.ratemyprofessors.com/paginate/professors/ratings?tid=" + profID + "&page=0&max=20";
 
+
                   var className = currentText.firstElementChild.firstElementChild.textContent.replace(/[- ]/g, "");
+                  if(!/\d/.test(className)){ // check if it found the correct course code in the Special Topics Courses. If it doesn't contain number, then it searches down again.
+                    var classDescription = currentText.firstElementChild.firstElementChild.nextSibling.textContent.split(" ");
+                    className = (classDescription[0] + classDescription[2]).replace(/[- ]/g, "");
+                  }
 
                   AddTooltip(newDiv, allprofRatingsURL, realFirstName, realLastName, className);
 
