@@ -20,8 +20,7 @@ function getNames(){
   if(iframe && iframe.id == "lbFrameContent" ){
     var innerDoc = (iframe.contentDocument) ? iframe.contentDocument : iframe.contentWindow.document;
     allTexts = innerDoc.querySelectorAll("td");
-    //allTitles = innerDoc.querySelectorAll(".ps-htmlarea span");
-
+    
     if(allTexts[0] != previous_page[0]){ // check if this page has been scanned already to avoid adding ratings more than once
 
       if(allTexts[0] != undefined && allTexts[0].offsetWidth == "697"){
