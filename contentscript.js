@@ -16,19 +16,22 @@ function getNames(){
   cssLink1.href = chrome.runtime.getURL('tooltip.css');
   cssLink1.type = "text/css";
   iframe.contentDocument.head.appendChild(cssLink1);
-
+  //console.log('clicked');
   if(iframe && iframe.id == "lbFrameContent" ){
+    //console.log('-1');
     var innerDoc = (iframe.contentDocument) ? iframe.contentDocument : iframe.contentWindow.document;
-    allTexts = innerDoc.querySelectorAll("td");
-    
+    allTexts = innerDoc.querySelectorAll(".ps-htmlarea td");
     if(allTexts[0] != previous_page[0]){ // check if this page has been scanned already to avoid adding ratings more than once
-
-      if(allTexts[0] != undefined && allTexts[0].offsetWidth == "697"){
+      //console.log('0');
+      if(allTexts[0] != undefined){
+        //console.log('1');
         var myurl = "https://search-production.ratemyprofessors.com/solr/rmp/select/?solrformat=true&rows=2&wt=json&q=";
         for(let i=0; i< allTexts.length; i++){
           if(allTexts[i].firstElementChild.nextElementSibling &&  allTexts[i].firstElementChild.nextElementSibling.nextElementSibling.nextSibling.wholeText ){
+            //console.log('2');
             var text = allTexts[i].firstElementChild.nextElementSibling.nextElementSibling.nextSibling.wholeText.trim().split(" ");
             if(text.length >= 15){
+              //console.log('3');
               var firstName = text[text.length-1].replace(/[,;]/g, "").toLowerCase();
               var lastName = text[text.length-2].replace(/[,;]/g, "").toLowerCase();
               myurl1 = myurl + firstName + "+" + lastName;
